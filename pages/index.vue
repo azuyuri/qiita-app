@@ -8,7 +8,7 @@
               <span>{{ item.title }}</span>
               <small> by {{ item.user.id }}</small>
             </h4>
-            <div>{{ item.body.slice(0.130) }}･･･・・・</div>
+            <div>{{ item.body.slice(0, 130) }}.....</div>
             <p><a :href="item.url">{{ item.url }}</a></p>
           </li>
         </ul>
@@ -19,6 +19,7 @@
 <script>
 export default {
   async asyncData({ app }) {
+    console.log
     const items = await app.$axios.$get('https://qiita.com/api/v2/items?query=tag:nuxt.js')
     return {
       items
