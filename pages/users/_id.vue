@@ -2,21 +2,21 @@
   <section class="container">
     <div>
       <h3>{{ user.id }}</h3>
-        <img src="user.profile_image_url" width="120" alt="">
-        <p>{{ user.description || 'No description' }}</p>
+        <img :src="user.profile_image_url" width="120" alt="">
+      <p>{{ user.description || 'No description' }}</p>
         <p>
           <nuxt-link to="/">
             <small><b>トップへ戻る</b></small>
           </nuxt-link>
         </p>
-        <h3>{{ user.id }}さんの投稿一覧</h3>
+      <h3>{{ user.id }}さんの投稿一覧</h3>
         <ul>
           <li v-for="item in items" :key="item.id">
             <h4>
-              <span>{{ item.title }}</span>
+            <span>{{ item.title }}</span>
             </h4>
-            <div>{{ item.body.sloce(0, 130) }}.....</div>
-            <p><a target="_blank" :href="item.url">{{ item.url }}</a></p>
+          <div>{{ item.body.slice(0, 130) }}.....</div>
+          <p><a target="_blank" :href="item.url">{{ item.url }}</a></p>
           </li>
         </ul>
     </div>
@@ -36,7 +36,7 @@ export default {
 }
 </script>
 
-<style second>
+<style scoped>
 .container {
   min-height: 100vh;
   padding: 16px;
