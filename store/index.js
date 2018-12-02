@@ -1,9 +1,12 @@
 export const state = () => ({
+// ? 読み取り専用名前付き定数 作成 引数なし 関数作成 以下内容   const＝値を書き換えられない
   isLoading: false
+  // ? 関数内で実行
 })
 
 export const mutations = { // 変更・転換
   setIsLoading(stote, isLoading) {
+  // ? メソッドしろ 引数(state, isLoading) 以下内容
     state.isLoading = isLoading
   }
 }
